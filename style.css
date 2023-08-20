@@ -1,193 +1,189 @@
 html {
-    background-image: linear-gradient(to right, rgb(116, 45, 111) 0%, rgb(199, 50, 89) 100%);
-  }
-  
-  #indicator {
-    font-size: 40px;
-    letter-spacing: 2px;
-    text-align: center;
-    color: white;
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    font-weight: 700;
-  }
-  
-  #root {
-    display: flex;
-    width: 100vw;
-    height: 100vh;
-  }
-  
-  .hangstand {
-    width: 40vw;
-    position: relative;
-  }
-  
-  .buttons-parent {
-    width: 50%;
-    padding-right: 6%;
-    display: grid;
-    height: 60vh;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-  }
-  
-  button {
-    background-color: #f6ff00;
+  background-image: linear-gradient(to right, red 0%, blue 100%);
+}
 
-    border-color: black;
-    font-size: 2rem;
-    font-weight: 600;
-    border-radius: 20px;
-    width: 60px;
-    height: 60px;
-    margin: 5px 8px;
-    padding: 6px 10px;
-  }
-  
-  button:hover {
-    transform: rotate(5deg);
-    background-color: #f59a50;
-    color: aliceblue;
-    cursor: pointer;
-  }
-  
-  body {
-    overflow-x: hidden;
-  }
-  
-  span {
-    display: none;
-  }
-  
-  /* .display- */
-  
-  p {
-    color: white;
-    height: fit-content;
-    width: fit-content;
-    margin: 10px;
-    font-size: 30px;
-    text-align: center;
-    border-bottom: 2px solid white;
-    height: 40px;
-    width: 40px;
-  }
-  
-  .blanks_parent {
-    height: 20vh;
-    display: flex;
-    justify-content: center;
-    margin-top: 80px;
-  }
-  
-  .greenBtn,
-  .greenBtn:hover {
-    background-color: rgb(0, 255, 0);
-    color: white;
-  }
-  
-  .redBtn,
-  .redBtn:hover {
-    background-color: red;
-    color: white;
-  }
-  
-  .class-1 {
-    height: 10px;
-    width: 80%;
-    left: 20px;
-    background: white;
-    position: absolute;
-    bottom: 8%;
-  }
-  
-  .class-2 {
-    height: 10px;
-    width: 90vh;
-    top: 46vh;
-    background: white;
-    position: absolute;
-    right: 197px;
-    transform: rotate(90deg);
-  }
-  
-  .class-3 {
-    height: 10px;
-    width: 50%;
-    left: 20px;
-    background: white;
-    position: absolute;
-    top: 1.7%;
-  }
-  
-  .class-4 {
-    height: 5px;
-    width: 15vh;
-    top: 9.8vh;
-    background: white;
-    position: absolute;
-    right: 198px;
-    transform: rotate(90deg);
-  }
-  
-  .class-5 {
-    height: 100px;
-    width: 100px;
-    position: absolute;
-    background-color: white;
-    left: 212px;
-    top: 114px;
-    border-radius: 50%;
-  }
-  
-  .class-6 {
-    height: 10px;
-    width: 28vh;
-    top: 46vh;
-    background: white;
-    position: absolute;
-    right: 160px;
-    transform: rotate(90deg);
-  }
-  
-  .class-7 {
-    height: 10px;
-    width: 20vh;
-    top: 46vh;
-    background: white;
-    position: absolute;
-    right: 245px;
-    transform: rotate(20deg);
-  }
-  .class-8 {
-    height: 10px;
-    width: 20vh;
-    top: 46vh;
-    background: white;
-    position: absolute;
-    right: 125px;
-    transform: rotate(-20deg);
-  }
-  .class-9 {
-    height: 10px;
-    width: 20vh;
-    top: 64vh;
-    background: white;
-    position: absolute;
-    right: 131px;
-    transform: rotate(-150deg);
-  }
-  
-  .class-10 {
-    height: 10px;
-    width: 20vh;
-    top: 64vh;
-    background: white;
-    position: absolute;
-    right: 236px;
-    transform: rotate(150deg);
-  }
-  
-  .display-none {
-    display: none;
-  }
-  
+#indicator {
+  font-size: 40px;
+  letter-spacing: 2px;
+  text-align: center;
+  color: white;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 700;
+}
+
+#root {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+}
+
+.hangstand {
+  width: 40vw;
+  position: relative;
+}
+
+.buttons-parent {
+  width: 50%;
+  padding-right: 6%;
+  display: grid;
+  height: 60vh;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+button {
+  background-color: #fdc500;
+  border: none;
+  font-size: 2rem;
+  font-weight: 600;
+  border-radius: 2px;
+  width: 60px;
+  height: 60px;
+  margin: 5px 8px;
+  padding: 6px 10px;
+}
+
+button:hover {
+  background-color: #ebb902;
+  cursor: pointer;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+span {
+  display: none;
+}
+
+/* .display- */
+
+p {
+  color: white;
+  height: fit-content;
+  width: fit-content;
+  margin: 10px;
+  font-size: 30px;
+  text-align: center;
+  border-bottom: 2px solid white;
+  height: 40px;
+  width: 40px;
+}
+
+.blanks_parent {
+  height: 20vh;
+  display: flex;
+  justify-content: center;
+  margin-top: 80px;
+}
+
+.greenBtn,
+.greenBtn:hover {
+  background-color: green;
+  color: white;
+}
+
+.redBtn,
+.redBtn:hover {
+  background-color: red;
+  color: white;
+}
+
+.class-1 {
+  height: 10px;
+  width: 80%;
+  left: 20px;
+  background: white;
+  position: absolute;
+  bottom: 8%;
+}
+
+.class-2 {
+  height: 10px;
+  width: 90vh;
+  top: 46vh;
+  background: white;
+  position: absolute;
+  right: 197px;
+  transform: rotate(90deg);
+}
+
+.class-3 {
+  height: 10px;
+  width: 50%;
+  left: 20px;
+  background: white;
+  position: absolute;
+  top: 1.7%;
+}
+
+.class-4 {
+  height: 5px;
+  width: 15vh;
+  top: 9.8vh;
+  background: white;
+  position: absolute;
+  right: 198px;
+  transform: rotate(90deg);
+}
+
+.class-5 {
+  height: 100px;
+  width: 100px;
+  position: absolute;
+  background-color: white;
+  left: 212px;
+  top: 114px;
+  border-radius: 50%;
+}
+
+.class-6 {
+  height: 10px;
+  width: 28vh;
+  top: 46vh;
+  background: white;
+  position: absolute;
+  right: 160px;
+  transform: rotate(90deg);
+}
+
+.class-7 {
+  height: 10px;
+  width: 20vh;
+  top: 46vh;
+  background: white;
+  position: absolute;
+  right: 245px;
+  transform: rotate(20deg);
+}
+.class-8 {
+  height: 10px;
+  width: 20vh;
+  top: 46vh;
+  background: white;
+  position: absolute;
+  right: 125px;
+  transform: rotate(-20deg);
+}
+.class-9 {
+  height: 10px;
+  width: 20vh;
+  top: 64vh;
+  background: white;
+  position: absolute;
+  right: 131px;
+  transform: rotate(-150deg);
+}
+
+.class-10 {
+  height: 10px;
+  width: 20vh;
+  top: 64vh;
+  background: white;
+  position: absolute;
+  right: 236px;
+  transform: rotate(150deg);
+}
+
+.display-none {
+  display: none;
+}
