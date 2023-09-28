@@ -1,323 +1,239 @@
-const randomAnimalsNames = [
-  "Aardvark",
-  "Albatross",
-  "Alligator",
-  "Alpaca",
-  "Ant",
-  "Anteater",
-  "Antelope",
-  "Ape",
-  "Armadillo",
-  "Donkey",
-  "Baboon",
-  "Badger",
-  "Barracuda",
-  "Bat",
-  "Bear",
-  "Beaver",
-  "Bee",
-  "Bison",
-  "Boar",
-  "Buffalo",
-  "Butterfly",
-  "Camel",
-  "Capybara",
-  "Caribou",
-  "Cassowary",
-  "Cat",
-  "Caterpillar",
-  "Cattle",
-  "Chamois",
-  "Cheetah",
-  "Chicken",
-  "Chimpanzee",
-  "Chinchilla",
-  "Chough",
-  "Clam",
-  "Cobra",
-  "Cockroach",
-  "Cod",
-  "Cormorant",
-  "Coyote",
-  "Crab",
-  "Crane",
-  "Crocodile",
-  "Crow",
-  "Curlew",
-  "Deer",
-  "Dinosaur",
-  "Dog",
-  "Dogfish",
-  "Dolphin",
-  "Dotterel",
-  "Dove",
-  "Dragonfly",
-  "Duck",
-  "Dugong",
-  "Dunlin",
-  "Eagle",
-  "Echidna",
-  "Eel",
-  "Eland",
-  "Elephant",
-  "Elk",
-  "Emu",
-  "Falcon",
-  "Ferret",
-  "Finch",
-  "Fish",
-  "Flamingo",
-  "Fly",
-  "Fox",
-  "Frog",
-  "Gaur",
-  "Gazelle",
-  "Gerbil",
-  "Giraffe",
-  "Gnat",
-  "Gnu",
-  "Goat",
-  "Goldfinch",
-  "Goldfish",
-  "Goose",
-  "Gorilla",
-  "Goshawk",
-  "Grasshopper",
-  "Grouse",
-  "Guanaco",
-  "Gull",
-  "Hamster",
-  "Hare",
-  "Hawk",
-  "Hedgehog",
-  "Heron",
-  "Herring",
-  "Hippopotamus",
-  "Hornet",
-  "Horse",
-  "Human",
-  "Hummingbird",
-  "Hyena",
-  "Ibex",
-  "Ibis",
-  "Jackal",
-  "Jaguar",
-  "Jay",
-  "Jellyfish",
-  "Kangaroo",
-  "Kingfisher",
-  "Koala",
-  "Kookabura",
-  "Kouprey",
-  "Kudu",
-  "Lapwing",
-  "Lark",
-  "Lemur",
-  "Leopard",
-  "Lion",
-  "Llama",
-  "Lobster",
-  "Locust",
-  "Loris",
-  "Louse",
-  "Lyrebird",
-  "Magpie",
-  "Mallard",
-  "Manatee",
-  "Mandrill",
-  "Mantis",
-  "Marten",
-  "Meerkat",
-  "Mink",
-  "Mole",
-  "Mongoose",
-  "Monkey",
-  "Moose",
-  "Mosquito",
-  "Mouse",
-  "Mule",
-  "Narwhal",
-  "Newt",
-  "Nightingale",
-  "Octopus",
-  "Okapi",
-  "Opossum",
-  "Oryx",
-  "Ostrich",
-  "Otter",
-  "Owl",
-  "Oyster",
-  "Panther",
-  "Parrot",
-  "Partridge",
-  "Peafowl",
-  "Pelican",
-  "Penguin",
-  "Pheasant",
-  "Pig",
-  "Pigeon",
-  "Pony",
-  "Porcupine",
-  "Porpoise",
-  "Quail",
-  "Quelea",
-  "Quetzal",
-  "Rabbit",
-  "Raccoon",
-  "Rail",
-  "Ram",
-  "Rat",
-  "Raven",
-  "Red deer",
-  "Red panda",
-  "Reindeer",
-  "Rhinoceros",
-  "Rook",
-  "Salamander",
-  "Salmon",
-  "Sand Dollar",
-  "Sandpiper",
-  "Sardine",
-  "Scorpion",
-  "Seahorse",
-  "Seal",
-  "Shark",
-  "Sheep",
-  "Shrew",
-  "Skunk",
-  "Snail",
-  "Snake",
-  "Sparrow",
-  "Spider",
-  "Spoonbill",
-  "Squid",
-  "Squirrel",
-  "Starling",
-  "Stingray",
-  "Stinkbug",
-  "Stork",
-  "Swallow",
-  "Swan",
-  "Tapir",
-  "Tarsier",
-  "Termite",
-  "Tiger",
-  "Toad",
-  "Trout",
-  "Turkey",
-  "Turtle",
-  "Viper",
-  "Vulture",
-  "Wallaby",
-  "Walrus",
-  "Wasp",
-  "Weasel",
-  "Whale",
-  "Wildcat",
-  "Wolf",
-  "Wolverine",
-  "Wombat",
-  "Woodcock",
-  "Woodpecker",
-  "Worm",
-  "Wren",
-  "Yak",
-  "Zebra",
-];
+//Initial References
+const letterContainer = document.getElementById("letter-container");
+const optionsContainer = document.getElementById("options-container");
+const userInputSection = document.getElementById("user-input-section");
+const newGameContainer = document.getElementById("new-game-container");
+const newGameButton = document.getElementById("new-game-button");
+const canvas = document.getElementById("canvas");
+const resultText = document.getElementById("result-text");
 
-let totalChances = 0;
+//Options values for buttons
+let options = {
+  fruits: [
+    "Apple",
+    "Blueberry",
+    "Mandarin",
+    "Pineapple",
+    "Pomegranate",
+    "Watermelon",
+  ],
+  animals: ["Hedgehog", "Rhinoceros", "Squirrel", "Panther", "Walrus", "Zebra"],
+  countries: [
+    "India",
+    "Hungary",
+    "Kyrgyzstan",
+    "Switzerland",
+    "Zimbabwe",
+    "Dominica",
+  ],
+};
 
-const hangStandChildren = document.querySelector(".hangstand").children;
+//count
+let winCount = 0;
+let count = 0;
 
-for (let index = 0; index < hangStandChildren.length; index++) {
-  const element = hangStandChildren[index];
-  element.classList.add("display-none");
-}
+let chosenWord = "";
 
-let randomAnimalName = null;
-
-function getRandomNumber(min, max) {
-  return Math.trunc(Math.random() * (max - min) + min);
-}
-
-function giveMeButtonsOnScreen() {
-  const rootEl = document.querySelector(".buttons-parent");
-  let buttonsDataArray = Array(26).fill(null);
-  let i = 65;
-  buttonsDataArray = buttonsDataArray.map((value) => {
-    return String.fromCharCode(i++);
-  });
-
-  buttonsDataArray.forEach((el) => {
-    const btn = document.createElement("button");
-    btn.textContent = el;
-    rootEl.appendChild(btn);
-  });
-}
-
-function chooseRandomAnimalName() {
-  const blankParentEl = document.querySelector(".blanks_parent");
-  const randomNumber = getRandomNumber(0, randomAnimalsNames.length);
-  randomAnimalName = randomAnimalsNames[randomNumber].toUpperCase();
-
-  for (let index = 0; index < randomAnimalName.length; index++) {
-    const letter = randomAnimalName[index];
-    const alpha = document.createElement("p");
-    const para = document.createElement("span");
-    para.textContent = letter;
-    alpha.appendChild(para);
-    blankParentEl.appendChild(alpha);
+//Display option buttons
+const displayOptions = () => {
+  optionsContainer.innerHTML += `<h3>Please Select An Option</h3>`;
+  let buttonCon = document.createElement("div");
+  for (let value in options) {
+    buttonCon.innerHTML += `<button class="options" onclick="generateWord('${value}')">${value}</button>`;
   }
-}
+  optionsContainer.appendChild(buttonCon);
+};
 
-giveMeButtonsOnScreen();
-chooseRandomAnimalName();
+//Block all the Buttons
+const blocker = () => {
+  let optionsButtons = document.querySelectorAll(".options");
+  let letterButtons = document.querySelectorAll(".letters");
+  //disable all options
+  optionsButtons.forEach((button) => {
+    button.disabled = true;
+  });
 
-const buttonsParentEl = document.querySelector(".buttons-parent");
+  //disable all letters
+  letterButtons.forEach((button) => {
+    button.disabled.true;
+  });
+  newGameContainer.classList.remove("hide");
+};
 
-let checkStatusGlobal = 0;
-const buttonParentClickFunction = function (e) {
-  let checkStatus = 0;
-  if (e.target.textContent.length === 1) {
-    const letterClicked = e.target.textContent;
-    console.log(randomAnimalName);
+//Word Generator
+const generateWord = (optionValue) => {
+  let optionsButtons = document.querySelectorAll(".options");
+  //If optionValur matches the button innerText then highlight the button
+  optionsButtons.forEach((button) => {
+    if (button.innerText.toLowerCase() === optionValue) {
+      button.classList.add("active");
+    }
+    button.disabled = true;
+  });
 
-    const allLettersEls = document.getElementsByTagName("span");
+  //initially hide letters, clear previous word
+  letterContainer.classList.remove("hide");
+  userInputSection.innerText = "";
 
-    for (let index = 0; index < allLettersEls.length; index++) {
-      const spanEl = allLettersEls[index];
+  let optionArray = options[optionValue];
+  //choose random word
+  chosenWord = optionArray[Math.floor(Math.random() * optionArray.length)];
+  chosenWord = chosenWord.toUpperCase();
 
-      if (letterClicked == spanEl.textContent) {
-        spanEl.parentElement.textContent = letterClicked;
+  //replace every letter with span containing dash
+  let displayItem = chosenWord.replace(/./g, '<span class="dashes">_</span>');
 
-        checkStatus++;
-        checkStatusGlobal++;
+  //Display each element as span
+  userInputSection.innerHTML = displayItem;
+};
+
+//Initial Function (Called when page loads/user presses new game)
+const initializer = () => {
+  winCount = 0;
+  count = 0;
+
+  //Initially erase all content and hide letteres and new game button
+  userInputSection.innerHTML = "";
+  optionsContainer.innerHTML = "";
+  letterContainer.classList.add("hide");
+  newGameContainer.classList.add("hide");
+  letterContainer.innerHTML = "";
+
+  //For creating letter buttons
+  for (let i = 65; i < 91; i++) {
+    let button = document.createElement("button");
+    button.classList.add("letters");
+    //Number to ASCII[A-Z]
+    button.innerText = String.fromCharCode(i);
+    //character button click
+    button.addEventListener("click", () => {
+      let charArray = chosenWord.split("");
+      let dashes = document.getElementsByClassName("dashes");
+      //if array contains clciked value replace the matched dash with letter else dram on canvas
+      if (charArray.includes(button.innerText)) {
+        charArray.forEach((char, index) => {
+          //if character in array is same as clicked button
+          if (char === button.innerText) {
+            //replace dash with letter
+            dashes[index].innerText = char;
+            //increment counter
+            winCount += 1;
+            //if winCount equals word lenfth
+            if (winCount == charArray.length) {
+              resultText.innerHTML = `<h2 class='win-msg'>You Win!!</h2><p>The word was <span>${chosenWord}</span></p>`;
+              //block all buttons
+              blocker();
+            }
+          }
+        });
+      } else {
+        //lose count
+        count += 1;
+        //for drawing man
+        drawMan(count);
+        //Count==6 because head,body,left arm, right arm,left leg,right leg
+        if (count == 6) {
+          resultText.innerHTML = `<h2 class='lose-msg'>You Lose!!</h2><p>The word was <span>${chosenWord}</span></p>`;
+          blocker();
+        }
       }
-    }
-
-    if (checkStatus != 0) {
-      e.target.classList.add("greenBtn");
-    } else {
-      totalChances++;
-      const elementToRemoveClass = document.querySelector(
-        `.class-${totalChances}`
-      );
-      elementToRemoveClass.classList.remove("display-none");
-      e.target.classList.add("redBtn");
-    }
-
-    e.target.setAttribute("disabled", "disabled");
+      //disable clicked button
+      button.disabled = true;
+    });
+    letterContainer.append(button);
   }
 
-  if (totalChances == 10) {
-    alert("You Lost the Game");
-    location.reload();
-  }
+  displayOptions();
+  //Call to canvasCreator (for clearing previous canvas and creating initial canvas)
+  let { initialDrawing } = canvasCreator();
+  //initialDrawing would draw the frame
+  initialDrawing();
+};
 
-  if (checkStatusGlobal == randomAnimalName.length) {
-    alert("You won the Game bro");
-    location.reload();
+//Canvas
+const canvasCreator = () => {
+  let context = canvas.getContext("2d");
+  context.beginPath();
+  context.strokeStyle = "#000";
+  context.lineWidth = 2;
+
+  //For drawing lines
+  const drawLine = (fromX, fromY, toX, toY) => {
+    context.moveTo(fromX, fromY);
+    context.lineTo(toX, toY);
+    context.stroke();
+  };
+
+  const head = () => {
+    context.beginPath();
+    context.arc(70, 30, 10, 0, Math.PI * 2, true);
+    context.stroke();
+  };
+
+  const body = () => {
+    drawLine(70, 40, 70, 80);
+  };
+
+  const leftArm = () => {
+    drawLine(70, 50, 50, 70);
+  };
+
+  const rightArm = () => {
+    drawLine(70, 50, 90, 70);
+  };
+
+  const leftLeg = () => {
+    drawLine(70, 80, 50, 110);
+  };
+
+  const rightLeg = () => {
+    drawLine(70, 80, 90, 110);
+  };
+
+  //initial frame
+  const initialDrawing = () => {
+    //clear canvas
+    context.clearRect(0, 0, context.canvas.width, context.canvas.height);
+    //bottom line
+    drawLine(10, 130, 130, 130);
+    //left line
+    drawLine(10, 10, 10, 131);
+    //top line
+    drawLine(10, 10, 70, 10);
+    //small top line
+    drawLine(70, 10, 70, 20);
+  };
+
+  return { initialDrawing, head, body, leftArm, rightArm, leftLeg, rightLeg };
+};
+
+//draw the man
+const drawMan = (count) => {
+  let { head, body, leftArm, rightArm, leftLeg, rightLeg } = canvasCreator();
+  switch (count) {
+    case 1:
+      head();
+      break;
+    case 2:
+      body();
+      break;
+    case 3:
+      leftArm();
+      break;
+    case 4:
+      rightArm();
+      break;
+    case 5:
+      leftLeg();
+      break;
+    case 6:
+      rightLeg();
+      break;
+    default:
+      break;
   }
 };
 
-buttonsParentEl.addEventListener("click", buttonParentClickFunction);
+//New Game
+newGameButton.addEventListener("click", initializer);
+window.onload = initializer;
